@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ilmangdong.homicatalog",
+      "sha256_cert_fingerprints": [
+        "ED:EB:97:62:A6:CF:CD:07:3E:57:F2:41:78:6C:14:A2:EB:5B:04:27:52:ED:69:77:AA:85:7A:0E:6E:C7:FC:AB"
+      ]
+    }
+  }
+]
