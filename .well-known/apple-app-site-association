@@ -3,9 +3,10 @@
     "apps": [],
     "details": [
       {
-        "appID": "49U39JMY38.com.homi.homicatalog",
+        "appID": "TEAMID_PLACEHOLDER.com.homi.homicatalog",
         "paths": [
           "/select",
+          "/select/",
           "/select/*"
         ]
       }
