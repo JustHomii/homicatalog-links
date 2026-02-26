@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "49U39JMY38.com.ilmangdong.homicatalog",
+        "paths": [
+          "/select",
+          "/select/*"
+        ]
+      }
+    ]
+  }
+}
