@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID_PLACEHOLDER.com.homi.homicatalog",
+        "paths": [
+          "/select",
+          "/select/",
+          "/select/*"
+        ]
+      }
+    ]
+  }
+}
