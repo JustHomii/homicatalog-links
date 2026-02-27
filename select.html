@@ -9,17 +9,17 @@ permalink: /select
   <title>등록 완료</title>
   <style>
     body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      padding:24px; line-height:1.5; background:#f7f7fb; color:#111;}
+      padding:24px; background:#f7f7fb; color:#111; line-height:1.5;}
     .card{max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:20px;
       box-shadow:0 6px 20px rgba(0,0,0,.08);}
     h1{font-size:20px; margin:0 0 10px;}
     p{margin:10px 0; color:#333;}
     .muted{color:#666; font-size:13px;}
     .btns{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
-    a.btn{display:inline-block; padding:12px 14px; border-radius:12px; text-decoration:none; font-weight:700;}
+    a.btn,button.btn{display:inline-block; padding:12px 14px; border-radius:12px; border:0;
+      text-decoration:none; font-weight:800; cursor:pointer;}
     .primary{background:#2F6BFF; color:#fff;}
     .ghost{background:#EEF2FF; color:#1E3A8A;}
-    code{background:#f1f1f5; padding:2px 6px; border-radius:8px;}
   </style>
 </head>
 <body>
@@ -27,28 +27,31 @@ permalink: /select
     <h1>등록 완료! ✅</h1>
     <p>부스 즐겨찾기 목록에 추가되었습니다.</p>
     <p class="muted">
-      앱으로 돌아가려면 아래 버튼을 누르거나, 이 화면을 닫고 <b>뒤로 가기</b>를 눌러주세요.
+      앱으로 돌아가려면 아래 <b>앱으로 열기</b>를 누르세요.
+      PDF(카탈로그)로 돌아가려면 이 화면을 닫거나 뒤로가기를 눌러주세요.
     </p>
 
     <div class="btns">
-      <a id="openApp" class="btn primary" href="#">앱으로 돌아가기</a>
-      <a class="btn ghost" href="https://links.homicatalog.com/">홈으로</a>
+      <a id="openApp" class="btn primary" href="#">앱으로 열기</a>
+      <button class="btn ghost" type="button"
+        onclick="history.length > 1 ? history.back() : window.close()">
+        뒤로가기
+      </button>
     </div>
 
     <p class="muted" style="margin-top:14px;">
-      참고: iOS에서는 외부 문서(PDF)에서 링크를 열 때 Safari 화면이 잠깐 나타날 수 있어요.
+      앱이 설치되어 있는데도 열리지 않으면, 앱을 한 번 실행한 뒤 다시 시도해주세요.
     </p>
   </div>
 
   <script>
-    // ✅ 쿼리에서 booths를 그대로 읽어서 커스텀 스킴으로 앱 열기 버튼을 만든다
-    // 예: https://links.homicatalog.com/select?booths=VIR01~03
+    // 현재 URL: https://links.homicatalog.com/select?booths=VIR01~03
+    // 버튼 링크: homicatalog://select?booths=VIR01~03 (스킴)
     const params = new URLSearchParams(location.search);
     const booths = params.get('booths') || '';
     const deeplink = 'homicatalog://select?booths=' + encodeURIComponent(booths);
 
-    const btn = document.getElementById('openApp');
-    btn.href = deeplink;
+    document.getElementById('openApp').href = deeplink;
   </script>
 </body>
 </html>
