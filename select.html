@@ -49,7 +49,7 @@ permalink: /select
     // 버튼 링크: homicatalog://select?booths=VIR01~03 (스킴)
     const params = new URLSearchParams(location.search);
     const booths = params.get('booths') || '';
-    const deeplink = 'homicatalog://select?booths=' + encodeURIComponent(booths);
+    const deeplink = 'homicatalog://select/?booths=' + encodeURIComponent(booths);
 
     document.getElementById('openApp').href = deeplink;
   </script>
